@@ -97,6 +97,15 @@ let isAutoPlaying = false;
 let intervalId;
 
 function autoPlay() {
+
+  const buttonElement = document.querySelector('.js-autoplay-button');
+
+  if (buttonElement.innerText === 'Auto Play') {
+    buttonElement.innerText = 'Auto Playing';
+  } else {
+    buttonElement.innerText = 'Auto Play';
+  }
+
   if (!isAutoPlaying) {
    intervalId = setInterval(function() {
       const playerMove = pickComputerMove();
@@ -107,5 +116,5 @@ function autoPlay() {
     clearInterval(intervalId);
     isAutoPlaying = false;
   }
-  
+
 }
